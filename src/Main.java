@@ -1,3 +1,4 @@
+import java.text.*;
 import java.util.*;
 
 public class Main {
@@ -39,13 +40,17 @@ public class Main {
     System.out.print("利用中のJavaバージョン：");
     System.out.println(System.getProperty("java.version"));
 
-    Properties pr = System.getProperties();
-    Iterator<String> i = pr.stringPropertyNames().iterator();
-    System.out.println("システムプロパティ一覧");
-    while (i.hasNext()) {
-      String key = i.next();
-      System.out.print(key + " = ");
-      System.out.println(System.getProperty(key));
+    Locale loc = Locale.getDefault();
+    System.out.println(loc.getCountry() + "-" + loc.getLanguage());
+    String now = (new SimpleDateFormat()).format(new Date());
+    if (loc.getLanguage().equals("ja")) {
+      System.out.println("現在の時刻は" + now);
+    } else {
+      System.out.println("Current time is " + now);
     }
+
+    TimeZone tz = TimeZone.getDefault();
+    System.out.print("現在のタイムゾーン");
+    System.out.println(tz.getDisplayName());
   }
 }

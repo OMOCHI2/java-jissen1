@@ -1,29 +1,32 @@
-import java.util.*;
+public class Hero implements Cloneable {
+  String name;    // 名前
+  int hp;         // HP
+  Sword sword;    // 装備している武器
 
-public class Hero {
-  private String name;
-  private int hp, mp;
-
-  public Hero(String name, int hp, int mp) {
-    this.name = name;
-    this.hp = hp;
-    this.mp = mp;
+  public Hero clone() {
+    Hero result = new Hero();
+    result.name = this.name;
+    result.hp = this.hp;
+    result.sword = this.sword.clone();
+    return result;
   }
 
-  public String toString() {
-    return "勇者(名前=" + this.name + "/HP="
-        + this.hp + "/MP=" + this.mp + ")";
+  public Hero() {
+      this.name = "";
   }
-
-  public boolean equals(Object o) {
-    if (o == this) return true;
-    if (o == null || !(o instanceof Hero)) return false;
-    Hero h = (Hero)o;
-    if (!this.name.trim().equals(h.name.trim())) return false;
-    return true;
+  public Hero(String name) {
+      this.name = name;
   }
-
-  public int hashCode() {
-    return Objects.hash(this.name, this.hp, this.mp);
+  public Sword getSword() {
+      return this.sword;
+  }
+  public void setSword(Sword sword) {
+      this.sword = sword;
+  }
+  public String getName() {
+      return this.name;
+  }
+  public void setName(String name) {
+      this.name = name;
   }
 }

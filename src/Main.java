@@ -17,5 +17,10 @@ public class Main {
     p.put("1192");
     String str = p.get();
     System.out.println(str);
+
+    Account account = new Account("1234567", AccountType.FUTSU);
+    System.out.println(account.getAccountNo());
+    System.out.println(account.getAccountType());
+
   }
 }

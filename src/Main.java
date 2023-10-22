@@ -12,5 +12,10 @@ public class Main {
     h1.getSword().setName("ひのきの棒");
     System.out.println("コピー元とコピー先の勇者の装備を表示します");
     System.out.println("コピー元：" + h1.getSword().getName() + "／コピー先：" + h2.getSword().getName());
+
+    Pocket<String> p = new Pocket<>();
+    p.put("1192");
+    String str = p.get();
+    System.out.println(str);
   }
 }

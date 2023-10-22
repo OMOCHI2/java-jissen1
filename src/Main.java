@@ -1,4 +1,4 @@
-import java.util.Optional;
+import java.util.*;
 
 public class Main {
   public static Optional<String> decorate(String s, char c) {
@@ -35,5 +35,17 @@ public class Main {
 
     Optional<String> st = decorate("", '*');
     System.out.println(st.orElse("nullのため処理できません"));
+
+    System.out.print("利用中のJavaバージョン：");
+    System.out.println(System.getProperty("java.version"));
+
+    Properties pr = System.getProperties();
+    Iterator<String> i = pr.stringPropertyNames().iterator();
+    System.out.println("システムプロパティ一覧");
+    while (i.hasNext()) {
+      String key = i.next();
+      System.out.print(key + " = ");
+      System.out.println(System.getProperty(key));
+    }
   }
 }

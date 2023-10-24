@@ -48,9 +48,5 @@ public class Main {
     } else {
       System.out.println("Current time is " + now);
     }
-
-    TimeZone tz = TimeZone.getDefault();
-    System.out.print("現在のタイムゾーン");
-    System.out.println(tz.getDisplayName());
   }
 }

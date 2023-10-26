@@ -26,7 +26,7 @@ public class Main {
     System.out.println("コピー元：" + h1.getSword().getName() + "／コピー先：" + h2.getSword().getName());
 
     Pocket<String> p = new Pocket<>();
-    p.put("1192");
+    p.put("Hello World!");
     String str = p.get();
     System.out.println(str);
 
